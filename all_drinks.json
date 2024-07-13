@@ -1,6 +1,5 @@
 [
     {
-        "id": 1,
         "drinkName": "Margarita",
         "typeOfAlcohol": "Tequila",
         "typeOfGlass": "Margarita Glass",
@@ -31,7 +30,6 @@
         ]
     },
     {
-        "id": 2,
         "drinkName": "Martini",
         "typeOfAlcohol": "Vodka",
         "typeOfGlass": "Martini Glass",
@@ -57,7 +55,6 @@
         ]
     },
     {
-        "id": 3,
         "drinkName": "Mojito",
         "typeOfAlcohol": "Rum",
         "typeOfGlass": "Highball Glass",
@@ -93,7 +90,6 @@
         ]
     },
     {
-        "id": 4,
         "drinkName": "Pina Colada",
         "typeOfAlcohol": "Rum",
         "typeOfGlass": "Hurricane Glass",
@@ -119,7 +115,6 @@
         ]
     },
     {
-        "id": 5,
         "drinkName": "Moscow Mule",
         "typeOfAlcohol": "Vodka",
         "typeOfGlass": "Copper Mug",
