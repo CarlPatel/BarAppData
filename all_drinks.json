@@ -1,0 +1,152 @@
+[
+    {
+        "id": 1,
+        "drinkName": "Margarita",
+        "typeOfAlcohol": "Tequila",
+        "typeOfGlass": "Margarita Glass",
+        "description": "A classic Mexican cocktail with a perfect balance of sweet, sour, and salty flavors.",
+        "origin": "The Margarita is widely believed to have Mexican roots, with one popular story attributing its creation to Carlos 'Danny' Herrera in Tijuana, Mexico, in the late 1930s.",
+        "instructions": "1. Rim the glass with salt.\n2. Mix tequila, triple sec, and lime juice with ice.\n3. Strain into the glass and garnish with a lime slice.",
+        "ingredients": [
+            {
+                "ingredient": "Tequila",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Triple Sec",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Lime Juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Salt",
+                "amount": 1,
+                "unit": ""
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "drinkName": "Martini",
+        "typeOfAlcohol": "Vodka",
+        "typeOfGlass": "Martini Glass",
+        "description": "A sophisticated and iconic cocktail known for its elegance and simplicity.",
+        "origin": "The Martini's exact origin is unclear, but it is commonly associated with American cocktail culture and gained prominence during the early 20th century in the United States.",
+        "instructions": "1. Stir gin or vodka with a splash of dry vermouth over ice.\n2. Strain into a chilled martini glass.\n3. Garnish with an olive or a lemon twist.",
+        "ingredients": [
+            {
+                "ingredient": "Gin or Vodka",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Dry Vermouth",
+                "amount": 0.25,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Olive or Lemon Twist",
+                "amount": 1,
+                "unit": ""
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "drinkName": "Mojito",
+        "typeOfAlcohol": "Rum",
+        "typeOfGlass": "Highball Glass",
+        "description": "A refreshing Cuban cocktail that combines the flavors of mint and citrus.",
+        "origin": "The Mojito's origin is in Cuba, with its roots going back to the 16th century when it was created by the indigenous people. It has since become a symbol of Cuban culture.",
+        "instructions": "1. Muddle mint leaves and sugar in a glass.\n2. Add lime juice and rum.\n3. Top with ice and soda water.\n4. Stir and garnish with mint sprig and lime wedge.",
+        "ingredients": [
+            {
+                "ingredient": "White Rum",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Fresh Lime Juice",
+                "amount": 1,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Mint Leaves",
+                "amount": 6,
+                "unit": ""
+            },
+            {
+                "ingredient": "Sugar",
+                "amount": 2,
+                "unit": "tsp"
+            },
+            {
+                "ingredient": "Soda Water",
+                "amount": 2,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "drinkName": "Pina Colada",
+        "typeOfAlcohol": "Rum",
+        "typeOfGlass": "Hurricane Glass",
+        "description": "A tropical delight that blends the creamy richness of coconut with the sweetness of pineapple.",
+        "origin": "The Pina Colada is Puerto Rico's national drink and was created in San Juan in the 1950s, with the recipe perfected by Ramón 'Monchito' Marrero, a bartender at the Caribe Hilton Hotel.",
+        "instructions": "1. Blend white rum, coconut cream, and pineapple juice with ice.\n2. Pour into a chilled hurricane glass.\n3. Garnish with a pineapple slice and a maraschino cherry.",
+        "ingredients": [
+            {
+                "ingredient": "White Rum",
+                "amount": 2.5,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Coconut Cream",
+                "amount": 3,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Pineapple Juice",
+                "amount": 3,
+                "unit": "oz"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "drinkName": "Moscow Mule",
+        "typeOfAlcohol": "Vodka",
+        "typeOfGlass": "Copper Mug",
+        "description": "Served in a distinctive copper mug, this cocktail offers a zesty and effervescent flavor.",
+        "origin": "The Moscow Mule's origin dates back to 1941 in the United States when it was created by John G. Martin and Jack Morgan. It was initially served in a copper mug and marketed to emphasize its 'Russian' appeal during the Cold War.",
+        "instructions": "1. Fill a copper mug with ice.\n2. Add vodka and lime juice.\n3. Top with ginger beer and stir.\n4. Garnish with a lime wheel.",
+        "ingredients": [
+            {
+                "ingredient": "Vodka",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Lime Juice",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Ginger Beer",
+                "amount": 4,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Lime Wheel",
+                "amount": 1,
+                "unit": ""
+            }
+        ]
+    }
+]
