@@ -156,9 +156,9 @@
     },
     {
     "id": "b6c8f5e1-9a72-4a62-a8f4-bf8f18b1c9d2",
-    "drinkName": "Bourbon Old Fashioned",
-    "typeOfAlcohol": "Bourbon",
-    "typeOfGlass": "Old-Fashioned Glass",
+    "drinkName": "Old Fashioned",
+    "typeOfAlcohol": "Whiskey",
+    "typeOfGlass": "Old Fashioned Glass",
     "description": "A timeless cocktail that combines the robust flavors of bourbon with a touch of sweetness and bitterness.",
     "origin": "The Old Fashioned is one of the oldest cocktails, with its roots tracing back to the early 19th century. It is often credited to the Pendennis Club in Louisville, Kentucky.",
     "instructions": "1. Muddle sugar and bitters in a glass.\n2. Add bourbon and a large ice cube.\n3. Stir until well-chilled.\n4. Garnish with an orange twist and a cherry.",
@@ -170,14 +170,14 @@
             "unit": "oz"
         },
         {
-            "ingredient": "Sugar Cube",
-            "amount": 1,
-            "unit": ""
-        },
-        {
             "ingredient": "Angostura Bitters",
             "amount": 3,
             "unit": "dashes"
+        },
+        {
+            "ingredient": "Sugar Cube",
+            "amount": 1,
+            "unit": ""
         },
         {
             "ingredient": "Orange Twist",
