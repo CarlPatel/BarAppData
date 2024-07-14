@@ -7,6 +7,7 @@
         "description": "A classic Mexican cocktail with a perfect balance of sweet, sour, and salty flavors.",
         "origin": "The Margarita is widely believed to have Mexican roots, with one popular story attributing its creation to Carlos 'Danny' Herrera in Tijuana, Mexico, in the late 1930s.",
         "instructions": "1. Rim the glass with salt.\n2. Mix tequila, triple sec, and lime juice with ice.\n3. Strain into the glass and garnish with a lime slice.",
+        "imageURL": "https://www.liquor.com/thmb/JQgDGy26Zsw-_cFGKH4zNH9PlXk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg",
         "ingredients": [
             {
                 "ingredient": "Tequila",
@@ -38,6 +39,7 @@
         "description": "A sophisticated and iconic cocktail known for its elegance and simplicity.",
         "origin": "The Martini's exact origin is unclear, but it is commonly associated with American cocktail culture and gained prominence during the early 20th century in the United States.",
         "instructions": "1. Stir gin or vodka with a splash of dry vermouth over ice.\n2. Strain into a chilled martini glass.\n3. Garnish with an olive or a lemon twist.",
+        "imageURL": "https://www.liquor.com/thmb/rZTNzb3B9n2DH58f4zRxtEvVd9M=/440x440/filters:no_upscale():max_bytes(150000):strip_icc()/vodka-martini-1500x1000-recirc-3e9b3b36a5324a3e88853695cf39179d.jpg",
         "ingredients": [
             {
                 "ingredient": "Gin or Vodka",
@@ -64,6 +66,7 @@
         "description": "A refreshing Cuban cocktail that combines the flavors of mint and citrus.",
         "origin": "The Mojito's origin is in Cuba, with its roots going back to the 16th century when it was created by the indigenous people. It has since become a symbol of Cuban culture.",
         "instructions": "1. Muddle mint leaves and sugar in a glass.\n2. Add lime juice and rum.\n3. Top with ice and soda water.\n4. Stir and garnish with mint sprig and lime wedge.",
+        "imageURL": "https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg",
         "ingredients": [
             {
                 "ingredient": "White Rum",
@@ -94,12 +97,13 @@
     },
     {
         "id": "e5f8c7a2-8a9e-4b7e-b7d6-0d8f9eae7e15",
-        "drinkName": "Pina Colada",
+        "drinkName": "Piña Colada",
         "typeOfAlcohol": "Rum",
         "typeOfGlass": "Hurricane Glass",
         "description": "A tropical delight that blends the creamy richness of coconut with the sweetness of pineapple.",
         "origin": "The Pina Colada is Puerto Rico's national drink and was created in San Juan in the 1950s, with the recipe perfected by Ramón 'Monchito' Marrero, a bartender at the Caribe Hilton Hotel.",
         "instructions": "1. Blend white rum, coconut cream, and pineapple juice with ice.\n2. Pour into a chilled hurricane glass.\n3. Garnish with a pineapple slice and a maraschino cherry.",
+        "imageURL": "https://www.liquor.com/thmb/DBqU37WdOMZCcoXVud3Wd1tzPlU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Frozen-Pina-Colada-1500x1500-hero-aac506d60d9647f78171bbe4ddc126ed.jpg",
         "ingredients": [
             {
                 "ingredient": "White Rum",
@@ -126,6 +130,7 @@
         "description": "Served in a distinctive copper mug, this cocktail offers a zesty and effervescent flavor.",
         "origin": "The Moscow Mule's origin dates back to 1941 in the United States when it was created by John G. Martin and Jack Morgan. It was initially served in a copper mug and marketed to emphasize its 'Russian' appeal during the Cold War.",
         "instructions": "1. Fill a copper mug with ice.\n2. Add vodka and lime juice.\n3. Top with ginger beer and stir.\n4. Garnish with a lime wheel.",
+        "imageURL": "https://www.liquor.com/thmb/G5R_Y6cS-voBV1hYqI2mtoovoTQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/moscow-mule-4000x4000-primary-ig-3a364d63e57b4a9b8cf82ec1dc54eb30.jpg",
         "ingredients": [
             {
                 "ingredient": "Vodka",
