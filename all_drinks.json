@@ -29,7 +29,8 @@
                 "amount": 1,
                 "unit": ""
             }
-        ]
+        ],
+        "tags": ["Mexican", "Classic", "Refreshing"]
     },
     {
         "id": "b8a7bca1-44df-4a0e-a97b-f5d8ef73a2f2",
@@ -56,7 +57,8 @@
                 "amount": 1,
                 "unit": ""
             }
-        ]
+        ],
+        "tags": ["Sophisticated", "Iconic", "Elegant"]
     },
     {
         "id": "d4b0e5b4-3a84-4e4b-9352-9f1a7120c6b2",
@@ -93,7 +95,8 @@
                 "amount": 2,
                 "unit": "oz"
             }
-        ]
+        ],
+        "tags": ["Cuban", "Minty", "Refreshing"]
     },
     {
         "id": "e5f8c7a2-8a9e-4b7e-b7d6-0d8f9eae7e15",
@@ -120,7 +123,8 @@
                 "amount": 3,
                 "unit": "oz"
             }
-        ]
+        ],
+        "tags": ["Tropical", "Creamy", "Sweet"]
     },
     {
         "id": "f6a1c6e8-9d2c-4c1b-8125-7b7c5d8e5e15",
@@ -152,43 +156,45 @@
                 "amount": 1,
                 "unit": ""
             }
-        ]
+        ],
+        "tags": ["Zesty", "Effervescent", "Unique"]
     },
     {
-    "id": "b6c8f5e1-9a72-4a62-a8f4-bf8f18b1c9d2",
-    "drinkName": "Old Fashioned",
-    "typeOfAlcohol": "Whiskey",
-    "typeOfGlass": "Old Fashioned Glass",
-    "description": "A timeless cocktail that combines the robust flavors of bourbon with a touch of sweetness and bitterness.",
-    "origin": "The Old Fashioned is one of the oldest cocktails, with its roots tracing back to the early 19th century. It is often credited to the Pendennis Club in Louisville, Kentucky.",
-    "instructions": "1. Muddle sugar and bitters in a glass.\n2. Add bourbon and a large ice cube.\n3. Stir until well-chilled.\n4. Garnish with an orange twist and a cherry.",
-    "imageURL": "https://www.liquor.com/thmb/ZP_3MhBReUpWnrTCRjQemNtq2pk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/bourbon-old-fashioned-4000x4000-primary-ig-f0ce04bec6754db187ab1e8a16fd45c3.jpg",
-    "ingredients": [
-        {
-            "ingredient": "Bourbon",
-            "amount": 2,
-            "unit": "oz"
-        },
-        {
-            "ingredient": "Angostura Bitters",
-            "amount": 3,
-            "unit": "dashes"
-        },
-        {
-            "ingredient": "Sugar Cube",
-            "amount": 1,
-            "unit": ""
-        },
-        {
-            "ingredient": "Orange Twist",
-            "amount": 1,
-            "unit": ""
-        },
-        {
-            "ingredient": "Maraschino Cherry",
-            "amount": 1,
-            "unit": ""
-        }
-    ]
+        "id": "b6c8f5e1-9a72-4a62-a8f4-bf8f18b1c9d2",
+        "drinkName": "Old Fashioned",
+        "typeOfAlcohol": "Whiskey",
+        "typeOfGlass": "Old Fashioned Glass",
+        "description": "A timeless cocktail that combines the robust flavors of bourbon with a touch of sweetness and bitterness.",
+        "origin": "The Old Fashioned is one of the oldest cocktails, with its roots tracing back to the early 19th century. It is often credited to the Pendennis Club in Louisville, Kentucky.",
+        "instructions": "1. Muddle sugar and bitters in a glass.\n2. Add bourbon and a large ice cube.\n3. Stir until well-chilled.\n4. Garnish with an orange twist and a cherry.",
+        "imageURL": "https://www.liquor.com/thmb/ZP_3MhBReUpWnrTCRjQemNtq2pk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/bourbon-old-fashioned-4000x4000-primary-ig-f0ce04bec6754db187ab1e8a16fd45c3.jpg",
+        "ingredients": [
+            {
+                "ingredient": "Bourbon",
+                "amount": 2,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Angostura Bitters",
+                "amount": 3,
+                "unit": "dashes"
+            },
+            {
+                "ingredient": "Sugar Cube",
+                "amount": 1,
+                "unit": ""
+            },
+            {
+                "ingredient": "Orange Twist",
+                "amount": 1,
+                "unit": ""
+            },
+            {
+                "ingredient": "Maraschino Cherry",
+                "amount": 1,
+                "unit": ""
+            }
+        ],
+        "tags": ["Timeless", "Robust", "Classic"]
 }
 ]
