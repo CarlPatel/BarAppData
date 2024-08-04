@@ -8,7 +8,7 @@ json_file_path = 'all_drinks.json'  # Reletive path to the JSON file
 
 # Path to your local folder
 repo_path = os.getcwd()
-commit_message = "Add downloaded images from JSON"
+commit_message = "Updates"
 
 # Function to download an image
 def download_image(image_url, save_path):
