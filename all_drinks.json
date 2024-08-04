@@ -30,7 +30,11 @@
                 "unit": ""
             }
         ],
-        "tags": ["Mexican", "Classic", "Refreshing"]
+        "tags": [
+            "Mexican",
+            "Classic",
+            "Refreshing"
+        ]
     },
     {
         "id": "b8a7bca1-44df-4a0e-a97b-f5d8ef73a2f2",
@@ -58,7 +62,11 @@
                 "unit": ""
             }
         ],
-        "tags": ["Sophisticated", "Iconic", "Elegant"]
+        "tags": [
+            "Sophisticated",
+            "Iconic",
+            "Elegant"
+        ]
     },
     {
         "id": "d4b0e5b4-3a84-4e4b-9352-9f1a7120c6b2",
@@ -96,7 +104,11 @@
                 "unit": "oz"
             }
         ],
-        "tags": ["Cuban", "Minty", "Refreshing"]
+        "tags": [
+            "Cuban",
+            "Minty",
+            "Refreshing"
+        ]
     },
     {
         "id": "e5f8c7a2-8a9e-4b7e-b7d6-0d8f9eae7e15",
@@ -124,7 +136,11 @@
                 "unit": "oz"
             }
         ],
-        "tags": ["Tropical", "Creamy", "Sweet"]
+        "tags": [
+            "Tropical",
+            "Creamy",
+            "Sweet"
+        ]
     },
     {
         "id": "f6a1c6e8-9d2c-4c1b-8125-7b7c5d8e5e15",
@@ -157,7 +173,11 @@
                 "unit": ""
             }
         ],
-        "tags": ["Zesty", "Effervescent", "Unique"]
+        "tags": [
+            "Zesty",
+            "Effervescent",
+            "Unique"
+        ]
     },
     {
         "id": "b6c8f5e1-9a72-4a62-a8f4-bf8f18b1c9d2",
@@ -195,6 +215,63 @@
                 "unit": ""
             }
         ],
-        "tags": ["Timeless", "Robust", "Classic"]
-}
+        "tags": [
+            "Timeless",
+            "Robust",
+            "Classic"
+        ]
+    },
+    {
+        "id": "c1f7b8a3-18f4-4a8c-9f9f-58f6d7a8c6e2",
+        "drinkName": "Kentucky Buck",
+        "typeOfAlcohol": "Bourbon",
+        "typeOfGlass": "Collins Glass",
+        "description": "A refreshing and spicy bourbon cocktail with notes of ginger and strawberry.",
+        "origin": "The Kentucky Buck is a modern bourbon cocktail that has gained popularity in the craft cocktail scene. Its creation is often attributed to mixologist Erick Castro.",
+        "instructions": "1. Muddle strawberries and simple syrup in a shaker.\n2. Add bourbon, lemon juice, and bitters.\n3. Shake with ice and strain into a Collins glass filled with ice.\n4. Top with ginger beer and garnish with a strawberry and a lemon wheel.",
+        "imageURL": "https://www.liquor.com/thmb/lNPrYLovOB35DDJUkw1LRcfQS1Y=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/kentucky-buck-720x720-primary-b9847ada3418413792048b71138ee037.jpg",
+        "ingredients": [
+            {
+                "ingredient": "Bourbon",
+                "amount": 1.5,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Fresh Strawberries",
+                "amount": 2,
+                "unit": ""
+            },
+            {
+                "ingredient": "Simple Syrup",
+                "amount": 0.5,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Fresh Lemon Juice",
+                "amount": 0.75,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Angostura Bitters",
+                "amount": 2,
+                "unit": "dashes"
+            },
+            {
+                "ingredient": "Ginger Beer",
+                "amount": 3,
+                "unit": "oz"
+            },
+            {
+                "ingredient": "Strawberry",
+                "amount": 1,
+                "unit": ""
+            },
+            {
+                "ingredient": "Lemon Wheel",
+                "amount": 1,
+                "unit": ""
+            }
+        ],
+        "tags": ["Refreshing", "Spicy", "Modern"]
+    }
 ]
