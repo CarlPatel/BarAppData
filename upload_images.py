@@ -49,6 +49,7 @@ def run_git_command(command):
         print(f"Command {' '.join(command)} executed successfully: {result.stdout}")
 
 # Add, commit, and push changes
+run_git_command(["git", "add", "-u"])
 run_git_command(["git", "add", "img/."])
 run_git_command(["git", "commit", "-m", commit_message])
 run_git_command(["git", "push"])
