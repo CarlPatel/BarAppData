@@ -4,9 +4,10 @@ import subprocess
 import json
 
 # Variables
-json_file_path = 'all_drinks.json'  # Path to the JSON file
+json_file_path = 'all_drinks.json'  # Reletive path to the JSON file
 
-repo_path = os.getcwd()  # Path to your local GitHub repository
+# Path to your local folder
+repo_path = os.getcwd()
 commit_message = "Add downloaded images from JSON"
 
 # Function to download an image
@@ -23,7 +24,7 @@ def download_image(image_url, save_path):
 with open(json_file_path, 'r') as file:
     drinks_data = json.load(file)
 
-# Step 1: Download images and move them to the repository
+# Download each image and save them to the foldder
 for drink in drinks_data:
     image_url = drink.get('imageURL')
     drink_id = drink.get('id')
@@ -39,6 +40,7 @@ for drink in drinks_data:
 
 os.chdir(repo_path)
 
+# Handle git commands
 def run_git_command(command):
     result = subprocess.run(command, capture_output=True, text=True)
     if result.returncode != 0:
