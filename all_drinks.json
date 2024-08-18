@@ -4,10 +4,14 @@
         "drinkName": "Margarita",
         "typeOfAlcohol": "Tequila",
         "typeOfGlass": "Margarita Glass",
+        "imageURL": "https://www.liquor.com/thmb/JQgDGy26Zsw-_cFGKH4zNH9PlXk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg",
         "description": "A classic Mexican cocktail with a perfect balance of sweet, sour, and salty flavors.",
         "origin": "The Margarita is widely believed to have Mexican roots, with one popular story attributing its creation to Carlos 'Danny' Herrera in Tijuana, Mexico, in the late 1930s.",
-        "instructions": "1. Rim the glass with salt.\n2. Mix tequila, triple sec, and lime juice with ice.\n3. Strain into the glass and garnish with a lime slice.",
-        "imageURL": "https://www.liquor.com/thmb/JQgDGy26Zsw-_cFGKH4zNH9PlXk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Frozen-Margarita-1500x1500-hero-191e49b3ab4f4781b93f3cfacac25136.jpg",
+        "instructions": [
+            "Rim the glass with salt.",
+            "Mix tequila, triple sec, and lime juice with ice.",
+            "Strain into the glass and garnish with a lime slice."
+        ],
         "ingredients": [
             {
                 "ingredient": "Tequila",
@@ -272,7 +276,11 @@
                 "unit": ""
             }
         ],
-        "tags": ["Refreshing", "Spicy", "Modern"]
+        "tags": [
+            "Refreshing",
+            "Spicy",
+            "Modern"
+        ]
     },
     {
         "id": "d2a3b5e8-8f5c-4e5c-9b8c-75f5c7b6c5d4",
@@ -315,6 +323,10 @@
                 "unit": ""
             }
         ],
-        "tags": ["Smooth", "Smoky", "Classic Twist"]
+        "tags": [
+            "Smooth",
+            "Smoky",
+            "Classic Twist"
+        ]
     }
 ]

@@ -34,7 +34,7 @@ def process_drink(drink):
     if image_url and drink_id:
         image_extension = os.path.splitext(image_url)[1]
         image_name = f"{drink_id}{image_extension}"
-        image_path = os.path.join(repo_path, "img", image_name)
+        image_path = os.path.join(repo_path, "img/drinks", image_name)
         
         # Check if image already exists
         if not os.path.exists(image_path):
