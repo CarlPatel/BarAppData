@@ -47,7 +47,11 @@
         "typeOfGlass": "Martini Glass",
         "description": "A sophisticated and iconic cocktail known for its elegance and simplicity.",
         "origin": "The Martini's exact origin is unclear, but it is commonly associated with American cocktail culture and gained prominence during the early 20th century in the United States.",
-        "instructions": "1. Stir gin or vodka with a splash of dry vermouth over ice.\n2. Strain into a chilled martini glass.\n3. Garnish with an olive or a lemon twist.",
+        "instructions": [
+            "Stir gin or vodka with a splash of dry vermouth over ice.",
+            "Strain into a chilled martini glass.",
+            "Garnish with an olive or a lemon twist."
+        ],
         "imageURL": "https://www.liquor.com/thmb/rZTNzb3B9n2DH58f4zRxtEvVd9M=/440x440/filters:no_upscale():max_bytes(150000):strip_icc()/vodka-martini-1500x1000-recirc-3e9b3b36a5324a3e88853695cf39179d.jpg",
         "ingredients": [
             {
@@ -79,7 +83,12 @@
         "typeOfGlass": "Highball Glass",
         "description": "A refreshing Cuban cocktail that combines the flavors of mint and citrus.",
         "origin": "The Mojito's origin is in Cuba, with its roots going back to the 16th century when it was created by the indigenous people. It has since become a symbol of Cuban culture.",
-        "instructions": "1. Muddle mint leaves and sugar in a glass.\n2. Add lime juice and rum.\n3. Top with ice and soda water.\n4. Stir and garnish with mint sprig and lime wedge.",
+        "instructions": [
+            "Muddle mint leaves and sugar in a glass.",
+            "Add lime juice and rum.",
+            "Top with ice and soda water.",
+            "Stir and garnish with mint sprig and lime wedge."
+        ],
         "imageURL": "https://www.liquor.com/thmb/MJRVqf-itJGY90nwUOYGXnyG-HA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mojito-720x720-primary-6a57f80e200c412e9a77a1687f312ff7.jpg",
         "ingredients": [
             {
@@ -121,7 +130,11 @@
         "typeOfGlass": "Hurricane Glass",
         "description": "A tropical delight that blends the creamy richness of coconut with the sweetness of pineapple.",
         "origin": "The Pina Colada is Puerto Rico's national drink and was created in San Juan in the 1950s, with the recipe perfected by Ramón 'Monchito' Marrero, a bartender at the Caribe Hilton Hotel.",
-        "instructions": "1. Blend white rum, coconut cream, and pineapple juice with ice.\n2. Pour into a chilled hurricane glass.\n3. Garnish with a pineapple slice and a maraschino cherry.",
+        "instructions": [
+            "Blend white rum, coconut cream, and pineapple juice with ice.",
+            "Pour into a chilled hurricane glass.",
+            "Garnish with a pineapple slice and a maraschino cherry."
+        ],
         "imageURL": "https://www.liquor.com/thmb/DBqU37WdOMZCcoXVud3Wd1tzPlU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Frozen-Pina-Colada-1500x1500-hero-aac506d60d9647f78171bbe4ddc126ed.jpg",
         "ingredients": [
             {
@@ -153,7 +166,12 @@
         "typeOfGlass": "Copper Mug",
         "description": "Served in a distinctive copper mug, this cocktail offers a zesty and effervescent flavor.",
         "origin": "The Moscow Mule's origin dates back to 1941 in the United States when it was created by John G. Martin and Jack Morgan. It was initially served in a copper mug and marketed to emphasize its 'Russian' appeal during the Cold War.",
-        "instructions": "1. Fill a copper mug with ice.\n2. Add vodka and lime juice.\n3. Top with ginger beer and stir.\n4. Garnish with a lime wheel.",
+        "instructions": [
+            "Fill a copper mug with ice.",
+            "Add vodka and lime juice.",
+            "Top with ginger beer and stir.",
+            "Garnish with a lime wheel."
+        ],
         "imageURL": "https://www.liquor.com/thmb/G5R_Y6cS-voBV1hYqI2mtoovoTQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/moscow-mule-4000x4000-primary-ig-3a364d63e57b4a9b8cf82ec1dc54eb30.jpg",
         "ingredients": [
             {
@@ -190,7 +208,12 @@
         "typeOfGlass": "Old Fashioned Glass",
         "description": "A timeless cocktail that combines the robust flavors of bourbon with a touch of sweetness and bitterness.",
         "origin": "The Old Fashioned is one of the oldest cocktails, with its roots tracing back to the early 19th century. It is often credited to the Pendennis Club in Louisville, Kentucky.",
-        "instructions": "1. Muddle sugar and bitters in a glass.\n2. Add bourbon and a large ice cube.\n3. Stir until well-chilled.\n4. Garnish with an orange twist and a cherry.",
+        "instructions": [
+            "Muddle sugar and bitters in a glass.",
+            "Add bourbon and a large ice cube.",
+            "Stir until well-chilled.",
+            "Garnish with an orange twist and a cherry."
+        ],
         "imageURL": "https://www.liquor.com/thmb/ZP_3MhBReUpWnrTCRjQemNtq2pk=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/bourbon-old-fashioned-4000x4000-primary-ig-f0ce04bec6754db187ab1e8a16fd45c3.jpg",
         "ingredients": [
             {
@@ -232,7 +255,12 @@
         "typeOfGlass": "Collins Glass",
         "description": "A refreshing and spicy bourbon cocktail with notes of ginger and strawberry.",
         "origin": "The Kentucky Buck is a modern bourbon cocktail that has gained popularity in the craft cocktail scene. Its creation is often attributed to mixologist Erick Castro.",
-        "instructions": "1. Muddle strawberries and simple syrup in a shaker.\n2. Add bourbon, lemon juice, and bitters.\n3. Shake with ice and strain into a Collins glass filled with ice.\n4. Top with ginger beer and garnish with a strawberry and a lemon wheel.",
+        "instructions": [
+            "Muddle strawberries and simple syrup in a shaker.",
+            "Add bourbon, lemon juice, and bitters.",
+            "Shake with ice and strain into a Collins glass filled with ice.",
+            "Top with ginger beer and garnish with a strawberry and a lemon wheel."
+        ],
         "imageURL": "https://www.liquor.com/thmb/lNPrYLovOB35DDJUkw1LRcfQS1Y=/750x0/filters:no_upscale():max_bytes(150000):strip_icc()/kentucky-buck-720x720-primary-b9847ada3418413792048b71138ee037.jpg",
         "ingredients": [
             {
