@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Drink Creator Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      max-width: 600px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: inline-block;
+      width: 150px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .form-row {
+      margin-bottom: 15px;
+    }
+
+    .inline-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+
+    .inline-row input {
+      flex: 1;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="url"] {
+      width: 100%;
+      padding: 6px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      width: 100%;
+      box-sizing: border-box;
+      min-height: 80px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    #jsonOutput {
+      white-space: pre-wrap;
+      background: #f4f4f4;
+      padding: 10px;
+      margin-top: 20px;
+      border: 1px solid #ccc;
+      font-family: Consolas, monospace;
+    }
+
+    .section-title {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Create a Drink JSON</h1>
+
+<form id="drinkForm" onsubmit="return false;">
+
+  <!-- Basic Info -->
+  <div class="form-row">
+    <label for="id">ID</label>
+    <input type="text" id="id" placeholder="Enter a UUID or any unique ID" />
+  </div>
+
+  <div class="form-row">
+    <label for="drinkName">Drink Name</label>
+    <input type="text" id="drinkName" placeholder="Margarita, Mojito, etc." />
+  </div>
+
+  <div class="form-row">
+    <label for="typeOfAlcohol">Type of Alcohol</label>
+    <input type="text" id="typeOfAlcohol" placeholder="Tequila, Vodka, Rum, etc." />
+  </div>
+
+  <div class="form-row">
+    <label for="typeOfGlass">Type of Glass</label>
+    <input type="text" id="typeOfGlass" placeholder="Margarita Glass, Highball, etc." />
+  </div>
+
+  <div class="form-row">
+    <label for="imageURL">Image URL</label>
+    <input type="url" id="imageURL" placeholder="https://example.com/image.jpg" />
+  </div>
+
+  <div class="form-row">
+    <label for="description">Description</label>
+    <textarea id="description" placeholder="A brief description of the drink"></textarea>
+  </div>
+
+  <div class="form-row">
+    <label for="origin">Origin</label>
+    <textarea id="origin" placeholder="Historical background, country of origin, etc."></textarea>
+  </div>
+
+  <!-- Instructions -->
+  <div class="section-title">Instructions</div>
+  <div id="instructionsContainer">
+    <!-- Dynamic instruction fields will be inserted here -->
+  </div>
+
+  <!-- Ingredients -->
+  <div class="section-title">Ingredients</div>
+  <div id="ingredientsContainer">
+    <!-- Each ingredient row contains: ingredient name, amount, unit -->
+  </div>
+
+  <!-- Tags -->
+  <div class="section-title">Tags</div>
+  <div id="tagsContainer">
+    <!-- Dynamic tag fields will be inserted here -->
+  </div>
+
+  <button onclick="generateJSON()">Get JSON</button>
+
+</form>
+
+<div id="jsonOutput"></div>
+
+<script>
+  // --- Dynamic Fields: Instructions, Ingredients, Tags ---
+  const instructionsContainer = document.getElementById('instructionsContainer');
+  const ingredientsContainer = document.getElementById('ingredientsContainer');
+  const tagsContainer = document.getElementById('tagsContainer');
+
+  // Counters for labeling instructions
+  let instructionCount = 0;
+
+  // Add the first row on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    addInstructionRow();
+    addIngredientRow();
+    addTagRow();
+  });
+
+  // Helper: create an input element with specified attributes
+  function createInput(type, placeholder, className, onInput) {
+    const input = document.createElement('input');
+    input.type = type;
+    input.placeholder = placeholder;
+    if (className) input.className = className;
+    if (onInput) input.addEventListener('input', onInput);
+    return input;
+  }
+
+  // ---------------- INSTRUCTIONS ----------------
+  function addInstructionRow() {
+    instructionCount++;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'form-row';
+
+    const label = document.createElement('label');
+    label.textContent = `Instruction #${instructionCount}`;
+    label.style.width = 'auto'; // override default
+
+    const input = createInput(
+      'text',
+      `Instruction ${instructionCount}`,
+      '',
+      handleInstructionInput
+    );
+
+    wrapper.appendChild(label);
+    wrapper.appendChild(input);
+    instructionsContainer.appendChild(wrapper);
+  }
+
+  function handleInstructionInput(e) {
+    const value = e.target.value.trim();
+    // If there's text, check if this is the last instruction row
+    const allInstructionInputs = instructionsContainer.querySelectorAll('input[type="text"]');
+    if (value && e.target === allInstructionInputs[allInstructionInputs.length - 1]) {
+      // Add a new row
+      addInstructionRow();
+    }
+  }
+
+  // ---------------- INGREDIENTS ----------------
+  function addIngredientRow() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'inline-row';
+
+    // ingredient name
+    const ingredientInput = createInput(
+      'text',
+      'Ingredient Name',
+      'ingredient-name'
+    );
+    // amount
+    const amountInput = createInput(
+      'number',
+      'Amount',
+      'ingredient-amount'
+    );
+    // unit
+    const unitInput = createInput(
+      'text',
+      'Unit (oz, tsp, etc.)',
+      'ingredient-unit',
+      handleIngredientInput
+    );
+
+    wrapper.appendChild(ingredientInput);
+    wrapper.appendChild(amountInput);
+    wrapper.appendChild(unitInput);
+
+    ingredientsContainer.appendChild(wrapper);
+  }
+
+  function handleIngredientInput(e) {
+    const row = e.target.parentElement;
+    const inputs = row.querySelectorAll('input');
+    // Check if all fields in this row are non-empty
+    const allFilled = Array.from(inputs).every(inp => inp.value.trim() !== '');
+
+    // If all are filled, add a new row
+    if (allFilled) {
+      // Check if this is the last row
+      const allRows = ingredientsContainer.querySelectorAll('.inline-row');
+      if (row === allRows[allRows.length - 1]) {
+        addIngredientRow();
+      }
+    }
+  }
+
+  // ---------------- TAGS ----------------
+  function addTagRow() {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'form-row';
+
+    // Single text input for a tag
+    const tagInput = createInput(
+      'text',
+      'Tag (e.g., Classic, Refreshing, etc.)',
+      '',
+      handleTagInput
+    );
+
+    wrapper.appendChild(tagInput);
+    tagsContainer.appendChild(wrapper);
+  }
+
+  function handleTagInput(e) {
+    const value = e.target.value.trim();
+    const allTagInputs = tagsContainer.querySelectorAll('input[type="text"]');
+    // If there's text and this is the last input, add a new row
+    if (value && e.target === allTagInputs[allTagInputs.length - 1]) {
+      addTagRow();
+    }
+  }
+
+  // ---------------- GENERATE JSON ----------------
+  function generateJSON() {
+    const drinkObj = {};
+
+    // Basic fields
+    drinkObj.id = document.getElementById('id').value.trim() || '';
+    drinkObj.drinkName = document.getElementById('drinkName').value.trim() || '';
+    drinkObj.typeOfAlcohol = document.getElementById('typeOfAlcohol').value.trim() || '';
+    drinkObj.typeOfGlass = document.getElementById('typeOfGlass').value.trim() || '';
+    drinkObj.imageURL = document.getElementById('imageURL').value.trim() || '';
+    drinkObj.description = document.getElementById('description').value.trim() || '';
+    drinkObj.origin = document.getElementById('origin').value.trim() || '';
+
+    // Instructions array
+    const instructionFields = instructionsContainer.querySelectorAll('input[type="text"]');
+    const instructions = [];
+    instructionFields.forEach(field => {
+      const val = field.value.trim();
+      if (val) instructions.push(val);
+    });
+    drinkObj.instructions = instructions;
+
+    // Ingredients array
+    const ingredientRows = ingredientsContainer.querySelectorAll('.inline-row');
+    const ingredients = [];
+    ingredientRows.forEach(row => {
+      const [ingredientName, amount, unit] = row.querySelectorAll('input');
+      // Only add if at least ingredient name is present
+      if (ingredientName.value.trim()) {
+        ingredients.push({
+          ingredient: ingredientName.value.trim(),
+          amount: Number(amount.value) || 0,
+          unit: unit.value.trim()
+        });
+      }
+    });
+    drinkObj.ingredients = ingredients;
+
+    // Tags array
+    const tagFields = tagsContainer.querySelectorAll('input[type="text"]');
+    const tags = [];
+    tagFields.forEach(field => {
+      const val = field.value.trim();
+      if (val) tags.push(val);
+    });
+    drinkObj.tags = tags;
+
+    // Show JSON in the output div
+    document.getElementById('jsonOutput').textContent = JSON.stringify(drinkObj, null, 2);
+  }
+</script>
+
+</body>
+</html>
