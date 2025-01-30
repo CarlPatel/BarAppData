@@ -74,95 +74,104 @@
 
 <h1>Create a Drink JSON</h1>
 
-<form id="drinkForm" onsubmit="return false;">
+<form id="drinkForm">
 
-  <!-- Basic Info -->
-  <div class="form-row">
-    <label for="id">ID</label>
-    <input type="text" id="id" placeholder="Enter a UUID or any unique ID" />
-  </div>
-
+  <!-- Basic Info (all fields required) -->
   <div class="form-row">
     <label for="drinkName">Drink Name</label>
-    <input type="text" id="drinkName" placeholder="Margarita, Mojito, etc." />
+    <input type="text" id="drinkName" placeholder="Margarita, Mojito, etc." required />
   </div>
 
   <div class="form-row">
     <label for="typeOfAlcohol">Type of Alcohol</label>
-    <input type="text" id="typeOfAlcohol" placeholder="Tequila, Vodka, Rum, etc." />
+    <input type="text" id="typeOfAlcohol" placeholder="Tequila, Vodka, Rum, etc." required />
   </div>
 
   <div class="form-row">
     <label for="typeOfGlass">Type of Glass</label>
-    <input type="text" id="typeOfGlass" placeholder="Margarita Glass, Highball, etc." />
+    <input type="text" id="typeOfGlass" placeholder="Margarita Glass, Highball, etc." required />
   </div>
 
   <div class="form-row">
     <label for="imageURL">Image URL</label>
-    <input type="url" id="imageURL" placeholder="https://example.com/image.jpg" />
+    <input type="url" id="imageURL" placeholder="https://example.com/image.jpg" required />
   </div>
 
   <div class="form-row">
     <label for="description">Description</label>
-    <textarea id="description" placeholder="A brief description of the drink"></textarea>
+    <textarea id="description" placeholder="A brief description of the drink" required></textarea>
   </div>
 
   <div class="form-row">
     <label for="origin">Origin</label>
-    <textarea id="origin" placeholder="Historical background, country of origin, etc."></textarea>
+    <textarea id="origin" placeholder="Historical background, country of origin, etc." required></textarea>
   </div>
 
-  <!-- Instructions -->
+  <!-- Instructions (not required, so last empty field won’t cause a validation error) -->
   <div class="section-title">Instructions</div>
-  <div id="instructionsContainer">
-    <!-- Dynamic instruction fields will be inserted here -->
-  </div>
+  <p style="margin: 0; font-size: 0.9em;">
+    * Type something in the last visible instruction to add a new one.<br/>
+    * Empty fields won’t appear in the final JSON.
+  </p>
+  <div id="instructionsContainer"></div>
 
-  <!-- Ingredients -->
+  <!-- Ingredients (not required for the same reason) -->
   <div class="section-title">Ingredients</div>
-  <div id="ingredientsContainer">
-    <!-- Each ingredient row contains: ingredient name, amount, unit -->
-  </div>
+  <p style="margin: 0; font-size: 0.9em;">
+    * Each row: Ingredient Name, Amount, Unit.<br/>
+    * Type in the last row to get a new one. Empty rows won’t appear in final JSON.
+  </p>
+  <div id="ingredientsContainer"></div>
 
-  <!-- Tags -->
-  <div class="section-title">Tags</div>
-  <div id="tagsContainer">
-    <!-- Dynamic tag fields will be inserted here -->
-  </div>
+  <!-- Tags (limit 3, but also not required) -->
+  <div class="section-title">Tags (max 3)</div>
+  <p style="margin: 0; font-size: 0.9em;">
+    * Fill the last tag field to add another, up to 3.<br/>
+    * Empty last field won’t show in final JSON.
+  </p>
+  <div id="tagsContainer"></div>
 
-  <button onclick="generateJSON()">Get JSON</button>
-
+  <button type="submit" onclick="generateJSON(event)">Get JSON</button>
 </form>
 
 <div id="jsonOutput"></div>
 
 <script>
-  // --- Dynamic Fields: Instructions, Ingredients, Tags ---
+  // Containers for dynamic fields
   const instructionsContainer = document.getElementById('instructionsContainer');
   const ingredientsContainer = document.getElementById('ingredientsContainer');
   const tagsContainer = document.getElementById('tagsContainer');
 
-  // Counters for labeling instructions
+  // Counters
   let instructionCount = 0;
+  let ingredientRowCount = 0;
+  let tagCount = 0;
 
-  // Add the first row on page load
+  // On page load, add the initial rows
   window.addEventListener('DOMContentLoaded', () => {
     addInstructionRow();
     addIngredientRow();
     addTagRow();
   });
 
-  // Helper: create an input element with specified attributes
-  function createInput(type, placeholder, className, onInput) {
+  // ------- Helper to create input without "required" for instructions & ingredients --------
+  function createTextInput(placeholder, onInput) {
     const input = document.createElement('input');
-    input.type = type;
+    input.type = 'text';
     input.placeholder = placeholder;
-    if (className) input.className = className;
     if (onInput) input.addEventListener('input', onInput);
     return input;
   }
 
-  // ---------------- INSTRUCTIONS ----------------
+  function createNumberInput(placeholder, onInput) {
+    const input = document.createElement('input');
+    input.type = 'number';
+    input.placeholder = placeholder;
+    if (onInput) input.addEventListener('input', onInput);
+    return input;
+  }
+
+  // ------------------ INSTRUCTIONS ------------------
   function addInstructionRow() {
     instructionCount++;
     const wrapper = document.createElement('div');
@@ -170,14 +179,9 @@
 
     const label = document.createElement('label');
     label.textContent = `Instruction #${instructionCount}`;
-    label.style.width = 'auto'; // override default
+    label.style.width = 'auto';
 
-    const input = createInput(
-      'text',
-      `Instruction ${instructionCount}`,
-      '',
-      handleInstructionInput
-    );
+    const input = createTextInput(`Instruction ${instructionCount}`, handleInstructionInput);
 
     wrapper.appendChild(label);
     wrapper.appendChild(input);
@@ -186,75 +190,52 @@
 
   function handleInstructionInput(e) {
     const value = e.target.value.trim();
-    // If there's text, check if this is the last instruction row
     const allInstructionInputs = instructionsContainer.querySelectorAll('input[type="text"]');
+
+    // If user types into the last instruction, create a new row
     if (value && e.target === allInstructionInputs[allInstructionInputs.length - 1]) {
-      // Add a new row
       addInstructionRow();
     }
   }
 
-  // ---------------- INGREDIENTS ----------------
+  // ------------------ INGREDIENTS ------------------
   function addIngredientRow() {
+    ingredientRowCount++;
     const wrapper = document.createElement('div');
     wrapper.className = 'inline-row';
 
-    // ingredient name
-    const ingredientInput = createInput(
-      'text',
-      'Ingredient Name',
-      'ingredient-name'
-    );
-    // amount
-    const amountInput = createInput(
-      'number',
-      'Amount',
-      'ingredient-amount'
-    );
-    // unit
-    const unitInput = createInput(
-      'text',
-      'Unit (oz, tsp, etc.)',
-      'ingredient-unit',
-      handleIngredientInput
-    );
+    // Name
+    const ingredientInput = createTextInput('Ingredient Name');
+    // Amount
+    const amountInput = createNumberInput('Amount');
+    // Unit
+    const unitInput = createTextInput('Unit (oz, tsp, etc.)', handleIngredientInput);
 
     wrapper.appendChild(ingredientInput);
     wrapper.appendChild(amountInput);
     wrapper.appendChild(unitInput);
-
     ingredientsContainer.appendChild(wrapper);
   }
 
   function handleIngredientInput(e) {
     const row = e.target.parentElement;
     const inputs = row.querySelectorAll('input');
-    // Check if all fields in this row are non-empty
     const allFilled = Array.from(inputs).every(inp => inp.value.trim() !== '');
 
-    // If all are filled, add a new row
-    if (allFilled) {
-      // Check if this is the last row
-      const allRows = ingredientsContainer.querySelectorAll('.inline-row');
-      if (row === allRows[allRows.length - 1]) {
-        addIngredientRow();
-      }
+    // If all 3 fields in the last row are filled, add another row
+    const allRows = ingredientsContainer.querySelectorAll('.inline-row');
+    if (allFilled && row === allRows[allRows.length - 1]) {
+      addIngredientRow();
     }
   }
 
-  // ---------------- TAGS ----------------
+  // ------------------ TAGS (max 3) ------------------
   function addTagRow() {
+    tagCount++;
     const wrapper = document.createElement('div');
     wrapper.className = 'form-row';
 
-    // Single text input for a tag
-    const tagInput = createInput(
-      'text',
-      'Tag (e.g., Classic, Refreshing, etc.)',
-      '',
-      handleTagInput
-    );
-
+    const tagInput = createTextInput(`Tag #${tagCount}`, handleTagInput);
     wrapper.appendChild(tagInput);
     tagsContainer.appendChild(wrapper);
   }
@@ -262,61 +243,91 @@
   function handleTagInput(e) {
     const value = e.target.value.trim();
     const allTagInputs = tagsContainer.querySelectorAll('input[type="text"]');
-    // If there's text and this is the last input, add a new row
-    if (value && e.target === allTagInputs[allTagInputs.length - 1]) {
+
+    // If there's text in the last tag, and we haven't reached 3, add a new one
+    if (
+      value &&
+      e.target === allTagInputs[allTagInputs.length - 1] &&
+      tagCount < 3
+    ) {
       addTagRow();
     }
   }
 
-  // ---------------- GENERATE JSON ----------------
-  function generateJSON() {
-    const drinkObj = {};
+  // ------------------ GENERATE JSON ------------------
+  function generateJSON(event) {
+    event.preventDefault();  // Stop page reload
+    const form = document.getElementById('drinkForm');
 
-    // Basic fields
-    drinkObj.id = document.getElementById('id').value.trim() || '';
-    drinkObj.drinkName = document.getElementById('drinkName').value.trim() || '';
-    drinkObj.typeOfAlcohol = document.getElementById('typeOfAlcohol').value.trim() || '';
-    drinkObj.typeOfGlass = document.getElementById('typeOfGlass').value.trim() || '';
-    drinkObj.imageURL = document.getElementById('imageURL').value.trim() || '';
-    drinkObj.description = document.getElementById('description').value.trim() || '';
-    drinkObj.origin = document.getElementById('origin').value.trim() || '';
+    // Check the form’s built-in validity (for the required main fields)
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
 
-    // Instructions array
+    // Build the final object
+    const drinkObj = {
+      id: (crypto.randomUUID) ? crypto.randomUUID() : generateFallbackUUID(),
+      drinkName: document.getElementById('drinkName').value.trim(),
+      typeOfAlcohol: document.getElementById('typeOfAlcohol').value.trim(),
+      typeOfGlass: document.getElementById('typeOfGlass').value.trim(),
+      imageURL: document.getElementById('imageURL').value.trim(),
+      description: document.getElementById('description').value.trim(),
+      origin: document.getElementById('origin').value.trim(),
+      instructions: [],
+      ingredients: [],
+      tags: []
+    };
+
+    // Gather instructions (ignore empty)
     const instructionFields = instructionsContainer.querySelectorAll('input[type="text"]');
-    const instructions = [];
     instructionFields.forEach(field => {
       const val = field.value.trim();
-      if (val) instructions.push(val);
+      if (val) {
+        drinkObj.instructions.push(val);
+      }
     });
-    drinkObj.instructions = instructions;
 
-    // Ingredients array
+    // Gather ingredients (ignore rows if all or any are empty)
     const ingredientRows = ingredientsContainer.querySelectorAll('.inline-row');
-    const ingredients = [];
     ingredientRows.forEach(row => {
-      const [ingredientName, amount, unit] = row.querySelectorAll('input');
-      // Only add if at least ingredient name is present
-      if (ingredientName.value.trim()) {
-        ingredients.push({
-          ingredient: ingredientName.value.trim(),
-          amount: Number(amount.value) || 0,
-          unit: unit.value.trim()
+      const [ing, amt, unit] = row.querySelectorAll('input');
+      // Only add if at least the ingredient name is typed (and any others you want to require for "valid" row)
+      if (ing.value.trim()) {
+        const ingredientName = ing.value.trim();
+        const amountVal = amt.value.trim();
+        const unitVal = unit.value.trim();
+
+        // If you want partial data allowed, just push what’s present
+        // Otherwise, you can skip if not all fields are filled
+        // For now we’ll only skip if the name is missing
+        drinkObj.ingredients.push({
+          ingredient: ingredientName,
+          amount: amountVal ? Number(amountVal) : 0,
+          unit: unitVal
         });
       }
     });
-    drinkObj.ingredients = ingredients;
 
-    // Tags array
+    // Gather tags, ignoring empties
     const tagFields = tagsContainer.querySelectorAll('input[type="text"]');
-    const tags = [];
     tagFields.forEach(field => {
       const val = field.value.trim();
-      if (val) tags.push(val);
+      if (val) drinkObj.tags.push(val);
     });
-    drinkObj.tags = tags;
+    drinkObj.tags = drinkObj.tags.slice(0, 3);
 
-    // Show JSON in the output div
-    document.getElementById('jsonOutput').textContent = JSON.stringify(drinkObj, null, 2);
+    // Show final JSON
+    const jsonOutput = document.getElementById('jsonOutput');
+    jsonOutput.textContent = JSON.stringify(drinkObj, null, 2);
+  }
+
+  // Fallback if crypto.randomUUID() not supported
+  function generateFallbackUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = Math.random() * 16 | 0, v = (c === 'x') ? r : (r & 0x3 | 0x8);
+      return v.toString(16);
+    });
   }
 </script>
 
