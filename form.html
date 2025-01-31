@@ -325,7 +325,13 @@
 
         // Show final JSON
         const jsonOutput = document.getElementById('jsonOutput');
-        jsonOutput.textContent = JSON.stringify(drinkObj, null, 2);
+        const jsonString = JSON.stringify(drinkObj, null, 2);
+        jsonOutput.textContent = jsonString;
+
+        // Copy JSON to clipboard
+        navigator.clipboard.writeText(jsonString).catch(err => {
+          console.error("Failed to copy JSON: ", err);
+        });
       }
 
       // Fallback if crypto.randomUUID() not supported
