@@ -1,0 +1,20 @@
+[
+    {
+        "date": "2025-02-04",
+        "drinkID": "b6c8f5e1-9a72-4a62-a8f4-bf8f18b1c9d2",
+        "drinkName": "Old Fashioned",
+        "alcType": "Whiskey"
+    },
+    {
+        "date": "2025-02-05",
+        "drinkID": "a3b3d6d8-0b4f-4e9f-a6b6-9f9471e2a32b",
+        "drinkName": "Margarita",
+        "alcType": "Tequila"
+    },
+    {
+        "date": "2025-02-06",
+        "drinkID": "b8a7bca1-44df-4a0e-a97b-f5d8ef73a2f2",
+        "drinkName": "Martini",
+        "alcType": "Vodka"
+    }
+]
